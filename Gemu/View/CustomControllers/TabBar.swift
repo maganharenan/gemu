@@ -28,8 +28,6 @@ struct TabBar_Previews: PreviewProvider {
     }
 }
 
-
-
 struct NavigationControllerBackgroundModifier: ViewModifier {
     var lineYPosition: CGFloat = 0
     
@@ -60,6 +58,4 @@ struct NavigationControllerBackgroundModifier: ViewModifier {
                 .position(x: width / 2, y: lineYPosition)
         }
     }
-    
 }
-

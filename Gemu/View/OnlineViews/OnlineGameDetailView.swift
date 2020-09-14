@@ -18,6 +18,7 @@ struct OnlineGameDetailView: View {
     @State var companies: [CompanyResponse] = []
     @State var showPercent = false
     @State var showConfiguration = false
+    @State var showAlert = false
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -43,11 +44,7 @@ struct OnlineGameDetailView: View {
                     self.showConfiguration.toggle()
                 }, label: {
                     Text(showConfiguration ? "Cancelar" : "Adicionar jogo")
-                        .frame(width: 150, height: 30)
-                        .background(Color(UIColor.systemGray5))
-                        .clipShape(Capsule())
-                        .shadow(color: showConfiguration ? Color.black.opacity(0.3) : Color.white.opacity(0.5), radius: 4, x: -4, y: -4)
-                        .shadow(color: showConfiguration ? Color.white.opacity(0.5) : Color.black.opacity(0.3), radius: 4, x: 4, y: 4)
+                        .foregroundColor(Color("DefaultButton"))
                 })
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -123,6 +120,27 @@ struct OnlineGameDetailView: View {
                     }
                 .padding(.horizontal)
                 .padding(.top, 10)
+                
+                Button(action: {
+                    self.viewModel.viewIsRefreshing = true
+                    self.verifiesIfTneGameWillBeAddedToAtLeastOneList { (success) in
+                        if success {
+                            self.showConfiguration.toggle()
+                            self.viewModel.fetchAllGameData()
+                            self.viewModel.fetchPlatformData()
+                        } else {
+                            self.showAlert.toggle()
+                        }
+                    }
+                }, label: {
+                    Text("Add game")
+                    .foregroundColor(Color("DefaultButton"))
+                })
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Atention"), message: Text("The game must be added at least to one list"), dismissButton: .default(Text("Ok")))
+                    }
                 
                 Spacer()
             }
@@ -290,6 +308,17 @@ struct OnlineGameDetailView: View {
         }
         viewModel.getCompanyInformation(companyIds: game.involvedCompanies ?? []) { (response) in
             self.companies = response
+        }
+    }
+    
+    private func verifiesIfTneGameWillBeAddedToAtLeastOneList(completion: @escaping (Bool) -> Void) {
+        if addToWishlist == false && addToCollection == false && addToPlayedList == false {
+            //Show the alert
+            completion(false)
+        } else {
+            //Add the game to the store
+            CoreDataStack().addAllGameDataToDatabase(gameData: self.game, coverURL: self.cover, platform: self.platforms[self.selectedPlatform], wishList: self.addToWishlist, collection: self.addToCollection, played: self.addToPlayedList, playing: self.addToPlayingList, completed: self.addToCompletedList)
+            completion(true)
         }
     }
 }

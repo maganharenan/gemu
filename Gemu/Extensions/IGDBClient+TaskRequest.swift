@@ -40,4 +40,23 @@ extension IGDBClient {
         }
         task.resume()
     }
+    
+    func taskForDownloadRequest(url: String, completion: @escaping (Data?, Error?) -> Void) {
+        let url = URL(string: url)
+        
+        guard let urlToDownload = url else {
+            completion(nil, nil)
+            return
+        }
+        
+        let request = URLRequest(url: urlToDownload)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let data = data {
+                completion(data, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+        task.resume()
+    }
 }

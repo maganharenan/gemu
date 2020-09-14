@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013F714D250E912000E2F6F5 /* HeroJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F714C250E912000E2F6F5 /* HeroJourneyView.swift */; };
+		013F714F250E954100E2F6F5 /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F714E250E954100E2F6F5 /* Badges.swift */; };
 		0140EC2E2500F492007193EB /* SwitchToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140EC2D2500F492007193EB /* SwitchToggle.swift */; };
 		014A90E124F669FA00DB2165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A90E024F669FA00DB2165 /* AppDelegate.swift */; };
 		014A90E324F669FA00DB2165 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A90E224F669FA00DB2165 /* SceneDelegate.swift */; };
@@ -25,6 +27,9 @@
 		014A910F24F732C200DB2165 /* IGDBClient+TaskRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A910E24F732C200DB2165 /* IGDBClient+TaskRequest.swift */; };
 		014A911124F7330800DB2165 /* IGDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A911024F7330800DB2165 /* IGDBClient.swift */; };
 		01647396250056C1008AE599 /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01647395250056C1008AE599 /* GenreResponse.swift */; };
+		0164840F2504F68200C8D972 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164840E2504F68200C8D972 /* CoreDataStack.swift */; };
+		016A8FD9250CF57D004C646A /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8FD8250CF57D004C646A /* UserSettingsView.swift */; };
+		016A8FDB250D8029004C646A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A8FDA250D8029004C646A /* BadgeView.swift */; };
 		017581292501972B00DD4789 /* CompanyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017581282501972B00DD4789 /* CompanyResponse.swift */; };
 		0175812B2501B0CC00DD4789 /* PlatformLogoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175812A2501B0CC00DD4789 /* PlatformLogoResponse.swift */; };
 		018233DB24F90D0F00705FE3 /* PlatformResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018233DA24F90D0F00705FE3 /* PlatformResponse.swift */; };
@@ -41,9 +46,13 @@
 		01C27A2F24FC0DCC00BEEC31 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C27A2E24FC0DCC00BEEC31 /* RingView.swift */; };
 		01C27A3124FC8A7000BEEC31 /* OnlineGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C27A3024FC8A7000BEEC31 /* OnlineGameDetailView.swift */; };
 		01C27A3424FC94F800BEEC31 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C27A3324FC94F800BEEC31 /* RoundedCorner.swift */; };
+		01CC04272507040900F0082F /* OfflineGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CC04262507040900F0082F /* OfflineGameDetailView.swift */; };
+		01F19C8A250C09740068A02A /* GameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F19C89250C09740068A02A /* GameCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013F714C250E912000E2F6F5 /* HeroJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroJourneyView.swift; sourceTree = "<group>"; };
+		013F714E250E954100E2F6F5 /* Badges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		0140EC2D2500F492007193EB /* SwitchToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToggle.swift; sourceTree = "<group>"; };
 		014A90DD24F669FA00DB2165 /* Gemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014A90E024F669FA00DB2165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +73,9 @@
 		014A910E24F732C200DB2165 /* IGDBClient+TaskRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IGDBClient+TaskRequest.swift"; sourceTree = "<group>"; };
 		014A911024F7330800DB2165 /* IGDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBClient.swift; sourceTree = "<group>"; };
 		01647395250056C1008AE599 /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
+		0164840E2504F68200C8D972 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		016A8FD8250CF57D004C646A /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		016A8FDA250D8029004C646A /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		017581282501972B00DD4789 /* CompanyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyResponse.swift; sourceTree = "<group>"; };
 		0175812A2501B0CC00DD4789 /* PlatformLogoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformLogoResponse.swift; sourceTree = "<group>"; };
 		018233DA24F90D0F00705FE3 /* PlatformResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformResponse.swift; sourceTree = "<group>"; };
@@ -78,6 +90,8 @@
 		01C27A2E24FC0DCC00BEEC31 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		01C27A3024FC8A7000BEEC31 /* OnlineGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGameDetailView.swift; sourceTree = "<group>"; };
 		01C27A3324FC94F800BEEC31 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		01CC04262507040900F0082F /* OfflineGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineGameDetailView.swift; sourceTree = "<group>"; };
+		01F19C89250C09740068A02A /* GameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,14 +150,16 @@
 				01C27A3224FC94E200BEEC31 /* Shapes */,
 				018301BE24F8890000A27D4C /* Lottie */,
 				014A910124F6B43A00DB2165 /* CustomControllers */,
+				01F19C88250C08F50068A02A /* OnlineViews */,
 				014A90E724F669FA00DB2165 /* HomeView.swift */,
 				014A90FF24F681B900DB2165 /* ProfileView.swift */,
+				016A8FDA250D8029004C646A /* BadgeView.swift */,
+				013F714C250E912000E2F6F5 /* HeroJourneyView.swift */,
 				018233DC24F9146800705FE3 /* CollectionView.swift */,
+				01F19C89250C09740068A02A /* GameCard.swift */,
 				018233DE24F9150800705FE3 /* WishlistView.swift */,
-				018301B024F83EAF00A27D4C /* SearchGameView.swift */,
-				018233E024F9154C00705FE3 /* GameSearchResultCard.swift */,
-				01C27A3024FC8A7000BEEC31 /* OnlineGameDetailView.swift */,
-				01C27A2E24FC0DCC00BEEC31 /* RingView.swift */,
+				01CC04262507040900F0082F /* OfflineGameDetailView.swift */,
+				016A8FD8250CF57D004C646A /* UserSettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +200,8 @@
 			children = (
 				014A90E424F669FA00DB2165 /* Gemu.xcdatamodeld */,
 				014A90FD24F6722900DB2165 /* SystemResources.swift */,
+				0164840E2504F68200C8D972 /* CoreDataStack.swift */,
+				013F714E250E954100E2F6F5 /* Badges.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -243,6 +261,17 @@
 				01C27A3324FC94F800BEEC31 /* RoundedCorner.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		01F19C88250C08F50068A02A /* OnlineViews */ = {
+			isa = PBXGroup;
+			children = (
+				018301B024F83EAF00A27D4C /* SearchGameView.swift */,
+				018233E024F9154C00705FE3 /* GameSearchResultCard.swift */,
+				01C27A3024FC8A7000BEEC31 /* OnlineGameDetailView.swift */,
+				01C27A2E24FC0DCC00BEEC31 /* RingView.swift */,
+			);
+			path = OnlineViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016A8FDB250D8029004C646A /* BadgeView.swift in Sources */,
 				01C27A3424FC94F800BEEC31 /* RoundedCorner.swift in Sources */,
 				018233E124F9154C00705FE3 /* GameSearchResultCard.swift in Sources */,
 				014A910F24F732C200DB2165 /* IGDBClient+TaskRequest.swift in Sources */,
@@ -338,8 +368,10 @@
 				018233DD24F9146800705FE3 /* CollectionView.swift in Sources */,
 				017581292501972B00DD4789 /* CompanyResponse.swift in Sources */,
 				014A910824F6DE8200DB2165 /* TabBarItem.swift in Sources */,
+				01F19C8A250C09740068A02A /* GameCard.swift in Sources */,
 				01C27A3124FC8A7000BEEC31 /* OnlineGameDetailView.swift in Sources */,
 				018233DB24F90D0F00705FE3 /* PlatformResponse.swift in Sources */,
+				01CC04272507040900F0082F /* OfflineGameDetailView.swift in Sources */,
 				014A910A24F71C6100DB2165 /* Endpoints.swift in Sources */,
 				018301B124F83EAF00A27D4C /* SearchGameView.swift in Sources */,
 				014A90E324F669FA00DB2165 /* SceneDelegate.swift in Sources */,
@@ -349,10 +381,14 @@
 				01C27A2F24FC0DCC00BEEC31 /* RingView.swift in Sources */,
 				0175812B2501B0CC00DD4789 /* PlatformLogoResponse.swift in Sources */,
 				014A910C24F71D1300DB2165 /* GameResponse.swift in Sources */,
+				013F714D250E912000E2F6F5 /* HeroJourneyView.swift in Sources */,
 				018301B524F8698600A27D4C /* CoverResponse.swift in Sources */,
 				014A90E624F669FA00DB2165 /* Gemu.xcdatamodeld in Sources */,
+				013F714F250E954100E2F6F5 /* Badges.swift in Sources */,
+				016A8FD9250CF57D004C646A /* UserSettingsView.swift in Sources */,
 				014A910324F6B45C00DB2165 /* TabBar.swift in Sources */,
 				014A911124F7330800DB2165 /* IGDBClient.swift in Sources */,
+				0164840F2504F68200C8D972 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

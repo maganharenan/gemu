@@ -12,19 +12,22 @@ struct HomeView: View {
     @ObservedObject var viewModel: GemuViewModel
     @State var selection = 3
     @State var search = ""
+    @State var isShowingGameDetails = false
     
     var body: some View {
         NavigationView {
             ZStack {
                 if viewModel.currentView == .collection {
-                    CollectionView()
+                    CollectionView(viewModel: viewModel, showDetail: $isShowingGameDetails)
                 } else if viewModel.currentView == .profile {
-                    ProfileView()
+                    ProfileView(viewModel: viewModel, showDetail: $isShowingGameDetails)
                 } else if viewModel.currentView == .wishlist {
-                    WishlistView()
+                    WishlistView(viewModel: viewModel, showDetail: $isShowingGameDetails)
                 }
                 
                 TabBar(viewModel: viewModel, tabItensResource: SystemResources().tabBarItems)
+                    .offset(y: isShowingGameDetails ? 50 : 0)
+                    .animation(.linear)
             }
             
             .navigationBarTitle("", displayMode: .inline)

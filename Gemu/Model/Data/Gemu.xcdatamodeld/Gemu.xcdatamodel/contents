@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
+        <attribute name="ageRatings" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="aggregatedRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="aggregatedRatingCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collection" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cover" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="storyline" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <relationship name="lists" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListData" inverseName="game" inverseEntity="ListData"/>
+        <relationship name="platform" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Platform" inverseName="game" inverseEntity="Platform"/>
+    </entity>
+    <entity name="GameArtworks" representedClassName="GameArtworks" syncable="YES" codeGenerationType="class"/>
+    <entity name="ListData" representedClassName="ListData" syncable="YES" codeGenerationType="class">
+        <attribute name="collection" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="completed" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="played" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="playing" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="wishlist" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="lists" inverseEntity="Game"/>
+    </entity>
+    <entity name="Platform" representedClassName="Platform" syncable="YES" codeGenerationType="class">
+        <attribute name="abbreviation" optional="YES" attributeType="String"/>
+        <attribute name="alternativeName" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="game" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="platform" inverseEntity="Game"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="GameArtworks" positionX="166.4765625" positionY="-46.87109375" width="128" height="43"/>
+        <element name="ListData" positionX="-285.6796875" positionY="6.86328125" width="128" height="133"/>
+        <element name="Platform" positionX="173.203125" positionY="41.78515625" width="128" height="118"/>
+    </elements>
 </model>
