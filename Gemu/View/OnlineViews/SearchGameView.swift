@@ -21,7 +21,7 @@ struct SearchGameView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.pink)
+                        .foregroundColor(Color("DefaultButton"))
                 })
                     .padding([.leading, .vertical])
                 

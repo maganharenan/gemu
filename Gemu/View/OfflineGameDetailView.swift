@@ -67,7 +67,7 @@ struct OfflineGameDetailView: View {
                     Text(game.summary ?? "")
                         .padding()
                     
-                    if game.storyline != "" || game.storyline != nil {
+                    if game.storyline != nil {
                         Text("Storyline")
                             .font(.headline)
                             .fontWeight(.bold)
