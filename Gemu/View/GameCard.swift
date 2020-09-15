@@ -9,32 +9,32 @@
 import SwiftUI
 
 struct GameCard: View {
-    @Binding var currentSelectedGame: Game
+    @Binding var currentSelectedGame: Game?
     @Binding var showDetail: Bool
     
     var body: some View {
         HStack {
-            Image(uiImage: UIImage(data: game.cover ?? Data()) ?? UIImage())
+            Image(uiImage: UIImage(data: game!.cover ?? Data()) ?? UIImage())
                 .resizable()
                 .interpolation(.high)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
             
             VStack(alignment: .leading) {
-                Text(game.name ?? "")
+                Text(game!.name ?? "")
                     .font(.caption)
                     .fontWeight(.bold)
                     .padding(.top, 2)
                     .lineLimit(2)
                 
-                Text(game.platform?.name ?? "")
+                Text(game!.platform?.name ?? "")
                     .foregroundColor(.secondary)
                     .font(.caption)
                     .fontWeight(.bold)
                     .padding(.top, 2)
                     .lineLimit(2)
                 
-                Text(game.summary ?? "")
+                Text(game!.summary ?? "")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .frame(height: 100)
@@ -54,7 +54,7 @@ struct GameCard: View {
         }
     }
     
-    var game: Game
+    var game: Game?
 }
 
 

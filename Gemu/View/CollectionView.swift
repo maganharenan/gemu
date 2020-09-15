@@ -12,7 +12,7 @@ struct CollectionView: View {
     @ObservedObject var viewModel: GemuViewModel
     @State var search:String = ""
     @Binding var showDetail: Bool
-    @State var currentSelectedGame = Game()
+    @State var currentSelectedGame: Game?
 
     var body: some View {
         ZStack {
@@ -57,7 +57,7 @@ struct CollectionView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             
             if showDetail {
-                OfflineGameDetailView(game: currentSelectedGame, showDetail: $showDetail)
+                OfflineGameDetailView(game: currentSelectedGame!, showDetail: $showDetail)
             }
         }
     }

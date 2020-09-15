@@ -14,7 +14,7 @@ struct ProfileView: View {
     @State var segmentControllSelection = 0
     @State var showConfiguration = false
     @Binding var showDetail: Bool
-    @State var currentSelectedGame = Game()
+    @State var currentSelectedGame: Game?
     
     var body: some View {
         ZStack {
@@ -58,13 +58,18 @@ struct ProfileView: View {
                 
                 ZStack {
                     
-                    if !viewModel.viewIsRefreshing {
-                        ScrollView(.vertical, showsIndicators: false) {
-                            ForEach(self.viewModel.fetchedResultsPlatforms.fetchedObjects?.filter{ gamesForSelectedCategory(platform: $0) } ?? [], id: \.self) { platform in
-                                HorizontalGameCollection(viewModel: self.viewModel, platform: platform, list: SystemResources().profileSegmentLabels[self.segmentControllSelection], currentSelectedGame: self.$currentSelectedGame, showDetail: self.$showDetail)
+                    if viewModel.fetchedResultsGame.fetchedObjects?.count ?? 0 > 0 {
+                        if !viewModel.viewIsRefreshing {
+                            ScrollView(.vertical, showsIndicators: false) {
+                                ForEach(self.viewModel.fetchedResultsPlatforms.fetchedObjects?.filter{ gamesForSelectedCategory(platform: $0) } ?? [], id: \.self) { platform in
+                                    HorizontalGameCollection(viewModel: self.viewModel, platform: platform, list: SystemResources().profileSegmentLabels[self.segmentControllSelection], currentSelectedGame: self.$currentSelectedGame, showDetail: self.$showDetail)
+                                }
+                                .padding(.bottom, 66)
                             }
-                            .padding(.bottom, 66)
                         }
+                    } else {
+                        Text("You haven't added any games yet")
+                            .fontWeight(.thin)
                     }
                     
                     NavigationLink(destination: SearchGameView()) {
@@ -87,7 +92,7 @@ struct ProfileView: View {
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             
             if showDetail {
-                OfflineGameDetailView(game: currentSelectedGame, showDetail: $showDetail)
+                OfflineGameDetailView(game: currentSelectedGame!, showDetail: $showDetail)
             }
             
             UserSettingsView(viewModel: viewModel, showSettings: $showConfiguration)
@@ -172,7 +177,7 @@ struct HorizontalGameCollection: View {
     var viewModel: GemuViewModel
     var platform: Platform
     var list: String
-    @Binding var currentSelectedGame: Game
+    @Binding var currentSelectedGame: Game?
     @Binding var showDetail: Bool
     
     var body: some View {
